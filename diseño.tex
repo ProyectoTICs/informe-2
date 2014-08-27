@@ -370,18 +370,28 @@ Lo principal en este documento es dejar especificado las caracteristicas lógica
 
 \section{Introducción}
 
-Al momento de comenzar el proceso de diseño hemos considerado los requerimientos del usuario , hemos caracterizado como clases las principales entidades participantes en el software, el usuario(persona ejecutante del programa),trabajadores y el cafe.
-Para hacer mas comprensivo aun el trabajo a realizar decidimos implementar para este proceso el diagrama de flujo para hacer mas tecnica y representativa la arquitectura del programa y el diagrama de casos de usos el cual de manera ejemplificadora nos permite identificar cada caso y quien lo realiza, ambos diagramas son excluyentes y tienen distintos enfoques que seran descritos en las secciones de diseño y marco teorico de este trabajo.
+Al momento de comenzar el proceso de diseño hemos considerado los requerimientos del usuario , hemos caracterizado como clases las principales entidades participantes en el software, el usuario (persona ejecutante del programa),trabajadores y el café.
+Para hacer más comprensivo aun el trabajo a realizar decidimos implementar para este proceso el diagrama de flujo para hacer más técnica y representativa la arquitectura del programa y el diagrama de casos de usos, el cual de manera ejemplificadora nos permite identificar cada caso y quién lo realiza, ambos diagramas son excluyentes y tienen distintos enfoques que seran descritos en las secciones de diseño y marco teórico de este trabajo.
 
 \section{Cuerpo}
+
+A partir del informe entregado hubo dudas con respecto a los requerimientos dado que no se especificaron los no funcionales, por lo que debimos definir nuestros requerimientos no funcionales como: 
+
+- Irrelevancia de el ordenador donde se vea el elegido para comprar café (se puede ver en todos los computadores)
+
+- No hay necesidad de un usuario y contraseña para el personal
+
+- Solo se muestra la persona con mayor varianza
+
+- No se requiere de un usuario ni conocimiento especial (es amigable)
 
 \subsection{Resumen}
 
 Debemos lograr un algoritmo que nos permita una equivalencia de gastos entre compañeros de un trabajo en la compra de café, teniendo como una de las principales problemáticas a superar la variable de ausencia de alguna persona independiente del motivo que por consecuencia no pagará café ese día.
 \begin{itemize}
-\item La \emph{principal} problemática a desarrollar y resolver son los requerimientos del usuario, en este caso nosotros lo definimos la solución como un sistema de administración equitativa de gastos semanales, particularmente de compras de cafés.
+\item La \emph{principal} problemática a desarrollar y resolver son los requerimientos del usuario, en este caso nosotros definimos la solución como un sistema de administración equitativa de gastos semanales, particularmente de compras de cafés.
 \item Ésta \emph{es} la primera etapa de nuestro proyecto correspondiente a la planificación y especificación de requerimientos, lo determinamos asi porque para desarrollar este proyecto utilizamos una estrategia de desarrollo, SCRUM.
-\item Como ya hemos definido los requerimientos del usuario y tomado una estrategia de desarrollamos esta documentación inicial de requermientos.
+\item Como ya hemos definido los requerimientos del usuario y tomado una estrategia con la que desarrollamos esta documentación inicial de requermientos.
 \end{itemize}
 
 
@@ -404,10 +414,7 @@ Es necesario antes de continuar, definir el contexto que rodea a nuestro problem
 Los usuarios podrán ser ingresados o eliminados del sistemas a través de un formulario, identificándose con el nombre y el apellido, y esta misma persona podrá escoger quienes están presentes al momento de hacer la elección. A este individuo lo llamaremos administrador, y deberá ser especificado por la empresa contratante. Todos los demás empleados podrán ver el resultado del sorteo de ese día desde una terminal, además de gráficas de los días anteriores, entiéndase cuantos cafés ha tomado y comprado cada persona. A estos los llamaremos usuarios y no tendrán ningún derecho a modificar los datos del sistema, solo leer la información.
 
 \section{Discusión}
-En un principio para obtener una solución al problema, se dieron varias ideas con respecto al tema, como por ejemplo: generar una clase Persona a la cual agregarle atributos, como alguna variable de tipo Bool, lo que permitiría tener constancia de si la persona realizó o no una compra de café, o una variable de tipo Int, con lo que se podría llevar un registro de cuántos cafés se han comprado. 
-
-Otras de las discusiones que surgio, refiere a utilizar un lenguaje en específico de codificación o utilizar distintos lenguajes comunicándose entre sí; generar resoluciones a partir de los requerimientos pedidos por el cliente; todo congeniando de forma que se obtengan respuestas de verificación o numéricas con respecto a la solución en sí, para obtener un desarrollo definitivo y funcional. Se buscó un método para lograr una cohesión entre todas las ideas, dando así una solución concreta, la cual deberá ser llevada a cabo según este proyecto avanza.
-
+luma vale callampa (y)
 \section{Conclusión}
 En conclusión, logramos concretizar los requerimientos que el cliente planteó para desarrollar el programa y resolver su problema, formalizamos también el enunciado, para entender lo que debiamos hacer y poder avanzar con las siguientes etapas dl proyecto.
 
