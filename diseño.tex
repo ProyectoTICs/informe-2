@@ -49,13 +49,16 @@
 
 
 % *** GRAPHICS RELATED PACKAGES ***
-%
-% \usepackage[pdftex]{graphicx}
+
+
+%\DeclareGraphicsExtensions{.eps}
+%\usepackage{graphicx}
+
 % declare the path(s) where your graphic files are
 % \graphicspath{{../pdf/}{../jpeg/}}
 % and their extensions so you won't have to specify these with
 % every instance of \includegraphics
-% \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+%\DeclareGraphicsExtensions{.pdf,.jpeg,.png,}
 %
 % graphicx was written by David Carlisle and Sebastian Rahtz. It is
 % required if you want graphics, photos, etc. graphicx.sty is already
@@ -365,55 +368,81 @@
 
 
 \begin{abstract}
-Lo principal en este documento es dejar especificado las caracteristicas lógicas y físicas de las salidas de nuestro software, representación de datos y modelos de organización, considerando los pro y contra de la información que obtuvimos cuando levantamos requerimientos.
+En este informe se indican los detalles necesarios para poder avanzar en el desarrollo del proyecto, mostrando con diagramas y especificaciones escritas, el diseño que consideramos adecuado para resolver el problema planteado. Para este cometido se toma en cuenta el levantado de requerimientos que hicieron nuestros compañeros de trabajo cuando conversaron con el cliente.
 \end{abstract}
 
 \section{Introducción}
 
-Al momento de comenzar el proceso de diseño hemos considerado los requerimientos del usuario , hemos caracterizado como clases las principales entidades participantes en el software, el usuario (persona ejecutante del programa),trabajadores y el café.
-Para hacer más comprensivo aun el trabajo a realizar decidimos implementar para este proceso el diagrama de flujo para hacer más técnica y representativa la arquitectura del programa y el diagrama de casos de usos, el cual de manera ejemplificadora nos permite identificar cada caso y quién lo realiza, ambos diagramas son excluyentes y tienen distintos enfoques que seran descritos en las secciones de diseño y marco teórico de este trabajo.
-
+Al momento de comenzar el proceso de diseño hemos considerado los requerimientos del usuario, hemos caracterizado las principales entidades participantes en el software, el usuario (persona ejecutante del programa), los trabajadores y la compra de café.
+Para hacer más comprensivo aún el trabajo a realizar, se implementarán diagramas de flujo y  casos de uso, 
+con los cuales estandarizaremos el diseño a implementar más adelante, logrando comunicar de forma clara como se empleará el programa y los modulos necesarios a desarrollar.
+Ambos diagramas son exluyentes entre sí y tienen distintos enfoques, pero ambos buscan mostrar y definir el software que hemos diseñado.
 
 
 \section{Marco Teorico}
 
-Para visualizar el diseño del algoritmo, se tomó la decisión de usar diagramas de flujo . Un diagrama de flujo es una representación gráfica de un proceso. Cada paso del proceso es representado por un símbolo diferente que  contiene una breve descripción de las etapas. Los símbolos gráficos del proceso están unidos entre sí con flechas que indican la dirección de flujo. Estos simbolos estan estandarizados segun la norma ISO 5807 que facilita la comprención de cada figura.
-A demás de esto, se utilizaron diagramas de casos de. Un diagrama de casos de uso consta de actores y relaciones a los casos, en pocas palabras, es una descripción breve, mediante un dibujo, de todas las opciones que tiene un actor en una ocasión que, en nuestro caso, es el uso de nuestro algoritmo. Hay que tener en cuenta que en el diagrama de casos de uso se usó lenguaje unificado modelado (UML) el cual es un lenguaje gráfico para visualizar, especificar, construir y documentar un sistema.
+Para la realización del diseño, se tomó la decisión de usar diagramas de flujo. Un diagrama de flujo es una representación gráfica de un proceso, cada paso del proceso es representado por un símbolo diferente que  contiene una breve descripción de la etapa. Los símbolos gráficos del proceso están unidos entre sí mediante flechas que indican la dirección del flujo. Estos simbolos estan estandarizados según la norma ISO 5807, que establece el significado de cada figura.
+
+Además, se utilizaron diagramas de casos de uso, los cuales constan de actores y relaciones a las diferentes opciones que tiene un usuario dentro del software, usando dibujos que describen brevemente el uso del algoritmo. Para esto se usó lenguaje unificado modelado, o UML, por sus siglas en inglés, \emph{Unified Modeling Language}, que es el lenguaje gráfico más conocido y utilizado en la actualidad para visualizar, especificar, construir y documentar un sistema.
 
 \section{Análisis y Diseño de Solución}
-Aca va la discusion:
 
-A partir del informe entregado hubo dudas con respecto a los requerimientos dado que no se especificaron los no funcionales, por lo que debimos definir nuestros requerimientos no funcionales como: 
+\subsection{Requerimientos faltantes}
+A partir del informe entregado, nos dispusimos a realizar el diseño, pero topamos al llegar a los requerimientos no funcionales, los cuales nos estaban especificados, por lo que basados en experiencias anteriores en el desarrollo de proyectos como este, definimos unos nuevos. Éstos son: 
+\begin{itemize}
+\item La información debe mostrarse en la terminal de cada usuario.
 
-- Irrelevancia de el ordenador donde se vea el elegido para comprar café (se puede ver en todos los computadores)
+\item Cada usuario debe tener acceso a indicar quienes faltan.
 
-<<<<<<< HEAD
-Para visualizar el diseño del algoritmo, se tomó la decisión de usar diagramas de flujo . Un diagrama de flujo es una representación gráfica de un proceso. Cada paso del proceso es representado por un símbolo diferente que  contiene una breve descripción de las etapas. Los símbolos gráficos del proceso están unidos entre sí con flechas que indican la dirección de flujo. Estos simbolos estan estandarizados segun la norma ISO 5807 que facilita la comprención de cada figura.
-A demás de esto, se utilizaron diagramas de casos de. Un diagrama de casos de uso consta de actores y relaciones a los casos, en pocas palabras, es una descripción breve, mediante un dibujo, de todas las opciones que tiene un actor en una ocasión que, en nuestro caso, es el uso de nuestro algoritmo. Hay que tener en cuenta que en el diagrama de casos de uso se usó lenguaje unificado modelado (UML) el cual es un lenguaje gráfico para visualizar, especificar, construir y documentar un sistema.
-=======
-- No hay necesidad de un usuario y contraseña para el personal
+\item Cada usuario debe tener acceso a ingresar el valor del café.
 
-- Solo se muestra la persona con mayor varianza
-
-- No se requiere de un usuario ni conocimiento especial (es amigable)
->>>>>>> origin/master
-
-Luego, rigiendonos por los requerimientos establecidos, se basó el diseño de la solución en un sistema abierto para varios usuarios a la vez, dejando de lado la idea de un Admin, puesto que si éste llegase a ausentarse no habría quien pueda controlar el sistema.
+\item Cada usuario puede agregar o eliminar a otros del sistema.
+\end{itemize}
 
 
-Aca va el cuerpo
 
-Hemos decidido utilizar diagrama de flujo y diagrama de casos de uso para poder diseñar de manera mejor y representativa tanto para los programadores y el usuario respectivamente el funcionamiento del software.
-Enfocándonos de cierta manera en el usuario, diseñamos un diagrama de casos de uso del usuario, para este caso solo lo tenemos a el como ejecutante(esto mencionado ya que estos diagramas se enfocan en el caso de uso y quien lo usa.)
-El usuario como objetivo principal realizar la consulta de quien es el compañero de trabajo seleccionado para comprar cafés ese día viernes y el programa le proporciona la respuesta, esta con un respaldo algorítmico de que ese trabajador es quien le corresponde comprar según los criterios de equitatividad implementados.
-El otro caso funcional del programa es que pasa si la persona correspondiente a comprar ese día esta ausente, es en ese momento donde el usuario realiza otro caso de uso, el cual le señala al programa que esa persona no esta, para asi este arrojar otro compañero de trabajo.
-Este caso lógicamente es dependiente del primero, es decir para asegurar una ausencia primero debe existir la consulta, luego de este se presenta el caso final que es la respuesta obtenida por el usuario sobre quien es en definitiva el trabajador seleccionado a quien le corresponde comprar.
-También el usuario puede tener acceso al registro de gasto de todos los trabajadores.Si bien este caso no es funcional permite la supervision de la plataforma y que esta funcionando de manera correcta.
-Los otros 2 casos son los de inserción y eliminación de usuarios en el registro.
+\subsection{Diagrama de casos de uso}
+El usuario tiene como objetivo principal, realizar la consulta de quien es el compañero de trabajo seleccionado para comprar café, este es el primer caso de uso, y se relaciona directamente con registar una ausencia, dado que es necesario saber quienes están disponibles para realizar la compra. El programa responde mostrando el usuario que debe ir a comprar café, utilizando un algoritmo que se explica más adelante. 
+También el usuario puede tener acceso al registro de gasto de todos los trabajadores. Si bien este caso no es funcional, permite supervisar la plataforma y asegurar su correcto funcionamiento.
+Por último, los usuarios pueden eliminar o agregar trabajadores del sistema e ingresar el precio del café que están comprando, tal como aparece en la figura \ref{fig:sim}.
 
+\begin{figure}[t]% prefiera la posición arriba (t) para las figuras
+  \centering
+  % incluya las figuras utilizando el comando de abajo
+  % note que la extensión es asumida pro latex,
+  % y que .pdf será asumido por pdflatex; o cualquier otra cosa
+  % declarada vía \DeclareGraphicsExtensions.
+  \includegraphics[width=0.8\linewidth]{CasosUso}
+  %\rule{0.8\linewidth}{2cm}
+  \caption{Diagrama de casos de uso.}
+  % genere las etiquetas para referencias a las figuras
+  % utilice identificadores que le ayuden a diferenciar figuras, tablas,
+  % y otras entidades (por ejemplo, fig:)
+  \label{fig:sim}
+\end{figure}
+
+\subsection{Diagrama de flujo}
+Tal como se especificaba en los requerimientos recibidos, y como podemos ver en la figura \ref{fig:sim2}, lo primero que hacemos es obetener los datos guardados en la base de datos y compararlos con las personas que están presentes, que son ingresadas por el usuario junto con el precio del café. Luego de esto, debemos calcular la diferencia de precio de los cafés tomados y los cafés comprados para cada uno de los usuarios y buscar el mayor de estos valores. En un principio este será nuestro elegido para ir a comprar y en caso de que este número se repita, se escoge uno de ellos al azar, siempre con las personas que están presentes. Para finalizar, se actualiza la base de datos y se muestra la eleción en pantalla.
+\begin{figure}[t]% prefiera la posición arriba (t) para las figuras
+  \centering
+  % incluya las figuras utilizando el comando de abajo
+  % note que la extensión es asumida pro latex,
+  % y que .pdf será asumido por pdflatex; o cualquier otra cosa
+  % declarada vía \DeclareGraphicsExtensions.
+  \includegraphics[width=0.8\linewidth]{AlgoritmoSelector}
+  %\rule{0.8\linewidth}{2cm}
+  \caption{Diagrama de flujo algoritmo selector.}
+  % genere las etiquetas para referencias a las figuras
+  % utilice identificadores que le ayuden a diferenciar figuras, tablas,
+  % y otras entidades (por ejemplo, fig:)
+  \label{fig:sim2}
+\end{figure}
 \subsection{Discusión}
+El principal punto en el que nos vimos estancados, fue en la definición de los requerimientos no funcionales, dado que en el documento recibido no estaban claros. La definicion de nuevos requerimientos nos trajo otro problema, la utilización de diferentes roles, como un administrador y usuarios. El problema al asignarle tareas únicas al administrador, era que existe la posibilidad de que el usuario asignado para este cargo no asista, dejando a sus colegas sin poder escoger a un comprador. Finalmente, y como se vió reflejado en el informe, solo definimos un tipo de rol.
+Otro de los puntos importantes fue la abstracción que debimos tomar a la hora de realizar los diferentes diagramas y evitar encasillarnos en un lenguaje específico.
+
 \section{Conclusión}
-Concluir aca.
+
 
 
 % Referencias
